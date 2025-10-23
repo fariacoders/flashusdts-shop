@@ -12,6 +12,9 @@ import {
 } from "@chakra-ui/react"
 import { useColorModeValue } from "@/components/ui/color-mode"
 import Image from "next/image"
+import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import { features } from "@/const";
+import "@/components/ui/bento-grid.css";
 
 export default function Home() {
   const bgColor = useColorModeValue("gray.50", "gray.900")
@@ -27,54 +30,29 @@ export default function Home() {
       bg={bgColor}
       fontFamily="sans-serif"
     >
-      <VStack gap={8} textAlign="center" p={8} maxW="3xl">
-        <Image
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={150}
-          height={30}
-          priority
-        />
-        <Heading
-          as="h1"
-          size="2xl"
-          fontWeight="bold"
-          letterSpacing="tight"
-          color={textColor}
-        >
-          Build Modern, Scalable Web Apps
-        </Heading>
-        <Text fontSize="lg" color={useColorModeValue("gray.600", "gray.400")}>
-          Get started with a powerful boilerplate featuring Next.js, Chakra UI,
-          and TypeScript. Everything you need to build a modern, fast, and
-          reliable web application.
-        </Text>
-        <HStack gap={4}>
-          <Link
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <BentoGrid className="w-full max-w-4xl">
+        {features.map((feature) => (
+          <BentoCard
+            key={feature.title}
+            className={feature.className}
+            background={
+              <Image
+                src={feature.background}
+                alt={feature.title}
+                layout="fill"
+                objectFit="cover"
+              />
+            }
           >
-            <Button
-              bg={buttonBg}
-              color={buttonColor}
-              _hover={{ bg: useColorModeValue("blue.600", "blue.400") }}
-              size="lg"
-            >
-              Deploy Now
-            </Button>
-          </Link>
-          <Link
-            href="https://nextjs.org/docs"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button variant="outline" size="lg">
-              Documentation
-            </Button>
-          </Link>
-        </HStack>
-      </VStack>
+            <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+              <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
+                {feature.title}
+              </h3>
+              <p className="max-w-lg text-neutral-400">{feature.description}</p>
+            </div>
+          </BentoCard>
+        ))}
+      </BentoGrid>
     </Flex>
-  )
+  );
 }
