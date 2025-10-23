@@ -120,3 +120,4 @@ Hidden text or links: Including text or links that are invisible to users but re
 Doorway pages: Creating low-quality pages optimized for narrow queries to redirect users to a different page.
 Automatically generated content: Using AI tools to mass-produce unoriginal, low-quality content. 
 AI can make mistakes, so double-check responses
+You need to read docs always for do done error dree development so always make sure you read before do done read all mentioned things docs then do apply in codebase.
