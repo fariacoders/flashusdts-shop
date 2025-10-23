@@ -121,3 +121,87 @@ Doorway pages: Creating low-quality pages optimized for narrow queries to redire
 Automatically generated content: Using AI tools to mass-produce unoriginal, low-quality content. 
 AI can make mistakes, so double-check responses
 You need to read docs always for do done error dree development so always make sure you read before do done read all mentioned things docs then do apply in codebase.
+
+
+Wrap your application with the `Provider` component generated in the `components/ui/provider` component at the root of your application.
+
+This provider composes the following:
+
+*   `ChakraProvider` from `@chakra-ui/react` for the styling system
+*   `ThemeProvider` from `next-themes` for color mode
+
+```
+import { Provider } from "@/components/ui/provider"
+
+export default function RootLayout(props: { children: React.ReactNode }) {
+  const { children } = props
+  return (
+    <html suppressHydrationWarning>
+      <body>
+        <Provider>{children}</Provider>
+      </body>
+    </html>
+  )
+}
+```
+
+
+Adding the `suppressHydrationWarning` prop to the `html` element is required to prevent the warning about the `next-themes` library.
+
+### Optimize Bundle
+
+We recommend using the `experimental.optimizePackageImports` feature in Next.js to optimize your bundle size by loading only the modules that you are actually using.
+
+```
+export default {
+  experimental: {
+    optimizePackageImports: ["@chakra-ui/react"],
+  },
+}
+```
+
+
+This also helps to resolve warnings like:
+
+```
+[webpack.cache.PackFileCacheStrategy] Serializing big strings (xxxkiB)
+```
+
+
+### Hydration errors
+
+If you see an error like this: **Hydration failed because the initial server rendered HTML did not match the client**, and the error looks similar to:
+
+```
++<div className="chakra-xxx">
+-<style data-emotion="css-global xxx" data-s="">
+```
+
+
+This is caused by how Next.js hydrates Emotion CSS in `--turbo` mode. Please remove the `--turbo` flag from your `dev` script in your `package.json` file.
+
+```
+- "dev": "next dev --turbo"
++ "dev": "next dev"
+```
+
+
+When this is fixed by the `Next.js` team, we'll update this guide.
+
+### Enjoy!
+
+With the power of the snippets and the primitive components from Chakra UI, you can build your UI faster.
+
+```
+import { Button, HStack } from "@chakra-ui/react"
+
+const Demo = () => {
+  return (
+    <HStack>
+      <Button>Click me</Button>
+      <Button>Click me</Button>
+    </HStack>
+  )
+}
+```
+
