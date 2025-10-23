@@ -27,7 +27,7 @@ export default function Home() {
       bg={bgColor}
       fontFamily="sans-serif"
     >
-      <VStack spacing={8} textAlign="center" p={8} maxW="3xl">
+      <VStack gap={8} textAlign="center" p={8} maxW="3xl">
         <Image
           src="/next.svg"
           alt="Next.js Logo"
@@ -49,27 +49,30 @@ export default function Home() {
           and TypeScript. Everything you need to build a modern, fast, and
           reliable web application.
         </Text>
-        <HStack spacing={4}>
-          <Button
-            as={Link}
+        <HStack gap={4}>
+          <Link
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            isExternal
-            bg={buttonBg}
-            color={buttonColor}
-            _hover={{ bg: useColorModeValue("blue.600", "blue.400") }}
-            size="lg"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Deploy Now
-          </Button>
-          <Button
-            as={Link}
+            <Button
+              bg={buttonBg}
+              color={buttonColor}
+              _hover={{ bg: useColorModeValue("blue.600", "blue.400") }}
+              size="lg"
+            >
+              Deploy Now
+            </Button>
+          </Link>
+          <Link
             href="https://nextjs.org/docs"
-            isExternal
-            variant="outline"
-            size="lg"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Documentation
-          </Button>
+            <Button variant="outline" size="lg">
+              Documentation
+            </Button>
+          </Link>
         </HStack>
       </VStack>
     </Flex>
