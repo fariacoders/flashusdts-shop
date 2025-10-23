@@ -1,8 +1,7 @@
 const CACHE_NAME = 'flash-usdts-shop-cache-v1';
 const urlsToCache = [
   '/',
-  '/styles/globals.css',
-  '/script.js'
+  '/globals.css',
 ];
 
 self.addEventListener('install', event => {
@@ -17,13 +16,15 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
+    caches.open(CACHE_NAME).then(cache => {
+      return fetch(event.request)
+        .then(response => {
+          cache.put(event.request, response.clone());
           return response;
-        }
-        return fetch(event.request);
-      }
-    )
+        })
+        .catch(() => {
+          return caches.match(event.request);
+        });
+    })
   );
 });

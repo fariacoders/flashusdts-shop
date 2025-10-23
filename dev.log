@@ -1,0 +1,12 @@
+$ next dev
+ ⚠ Invalid next.config.ts options detected:
+ ⚠     Unrecognized key(s) in object: 'metadataBase'
+ ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+   ▲ Next.js 16.0.0 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.2:3000
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+ ✓ Starting...
+ ✓ Ready in 976ms

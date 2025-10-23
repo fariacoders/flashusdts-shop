@@ -1,3 +1,4 @@
+import { ChakraProvider } from "@chakra-ui/react"
 import { Provider } from "@/components/ui/provider"
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -16,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://flashusdts.shop"),
   title: "FLASH USDTS SHOP",
   description: "A marketplace for high-quality code snippets, automation scripts, and educational materials from expert developers worldwide.",
 };
@@ -40,7 +42,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Provider>{children}</Provider>
+        <ChakraProvider>
+          <Provider>{children}</Provider>
+        </ChakraProvider>
         <SpeedInsights />
         <Analytics />
       </body>
