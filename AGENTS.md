@@ -105,6 +105,17 @@ In contrast to the ethical and sustainable white hat methods, black hat SEO empl
 Keyword stuffing: Overusing keywords in content, meta tags, or anchor text in an unnatural way.
 Cloaking: Presenting different content to search engine crawlers than what a human user sees.
 Paid link schemes: Buying or selling backlinks intended to manipulate rankings.
+Progressive Web App, is a web application that uses modern web technologies to deliver an app-like experience, including being installable on a user's device, working offline, and having its own ico
+Key features of PWAs
+Installable: Users can install PWAs to their device, where they will appear with their own icon on the home screen or app launcher, just like a traditional app. 
+Offline functionality: PWAs can work even with a poor or no internet connection, as they can use cached data from previous online activities. 
+App-like interface: Once installed, a PWA opens in a standalone window, separate from the browser's user interface, providing a more immersive experience. 
+Reliable and fast: They are built to be reliable, with features like service workers that enable them to work offline and load quickly. 
+Discoverable: PWAs are discoverable through a web browser like any website and can be found by search engines. 
+Single codebase: Developers can use one codebase to create an application that works across multiple devices and platforms. 
+Progressive enhancement: PWAs are built with a core experience that works everywhere, and they progressively enhance the experience for users who have more capable browsers. 
+Service workers: These are scripts that the browser runs in the background, enabling features like offline support and push notifications. 
+Web App Manifest: This is a simple JSON file that provides the PWA with details like the app's name and icon, allowing it to be "installed" on a user's device. 
 Hidden text or links: Including text or links that are invisible to users but readable by search engines.
 Doorway pages: Creating low-quality pages optimized for narrow queries to redirect users to a different page.
 Automatically generated content: Using AI tools to mass-produce unoriginal, low-quality content. 
