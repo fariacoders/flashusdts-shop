@@ -204,4 +204,24 @@ const Demo = () => {
   )
 }
 ```
+We need to make sure we doing follow the all mentioned llm txt for works goods way more!!
+-----------------------------------------
 
+The following files are available.
+
+*   [/llms.txt](https://chakra-ui.com/llms.txt): The main LLMs.txt file
+*   [/llms-full.txt](https://chakra-ui.com/llms-full.txt): The complete documentation for Chakra UI v3
+
+* * *
+
+Separate docs are available if you have a limited context window.
+
+*   [/llms-components.txt](https://chakra-ui.com/llms-components.txt): Only component documentation
+*   [/llms-styling.txt](https://chakra-ui.com/llms-styling.txt): Only styling documentation
+*   [/llms-theming.txt](https://chakra-ui.com/llms-theming.txt): Only theming documentation
+
+* * *
+
+We also have a special `llms-v3-migration.txt` file that contains documentation for migrating to Chakra UI v3.
+
+*   [/llms-v3-migration.txt](https://chakra-ui.com/llms-v3-migration.txt): Documentation for migrating to Chakra UI v3
